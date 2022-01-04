@@ -1,0 +1,11 @@
+<form action="/bar/actualizar-perfil" method="post" enctype="multipart/form-data">
+    <p th:if="${error!=null}" th:text="${error}" style="color:red"></p>
+    <label for="nombre">Nombre:</label>
+    <input type="text" placeholder="Ingresá el nombre del bar" name="nombre" th:value="${perfil.bar}">
+    <label for="apellido">Calle:</label>
+    <input type="text" name="calle" placeholder="Ingresá la calle" th:value="${perfil.calle}">
+    <label for="email">Numeracion:</label>
+    <input type="number" name="numero" placeholder="Ingresá la numeracion" th:value="${perfil.numero}">
+    <input type="submit" value="Registrar">
+
+</form>

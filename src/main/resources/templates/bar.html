@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <script src="https://kit.fontawesome.com/3e0d35078d.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/estilos.css" />
+        <title>Cargar Bar</title>
+    </head>
+
+    <body>
+
+        <nav th:replace="/fragments/nav :: nav"></nav>
+        <div class="cargabar-container">
+            <img id="img-cargabar" src="/img/back-food.png" alt="">
+            <div class="body-container cargabar-form">
+                <div class="register-form-container cargabar-register">
+                    <h1>SyF</h1>
+                    <form th:replace="/fragments/cargarbar :: form"></form>
+                </div>
+            </div>
+        </div>
+
+        <footer th:replace="/fragments/footer :: footer"></footer>
+
+    </body>
+
+</html>

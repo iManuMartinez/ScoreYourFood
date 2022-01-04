@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+    <head>
+        <title>Agregar Plato</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!-- CSS Styles-->
+        <link rel="stylesheet" href="/css/estilos.css">
+    </head>
+    <body>
+        <nav th:replace="/fragments/nav :: nav"></nav>
+
+        <div class="misplatos-container">
+            <div class="misplatos-user">
+                <img id="photo-user" th:if="${usuario.foto != null}" th:src="${'/foto/usuario/' + usuario.id}">
+                <img id="photo-user" src="/img/User.png" th:if="${usuario.foto == null}">  
+                <h1 th:text="${usuario.nombre}"></h1>
+            </div>
+            <div class="misplatos-cards">
+                <div class="misplatos-cards-container" th:each="plato:${platos}">
+                    <div class="card-vsc" >
+                        <a th:href="@{/plato/platos-usuario(id=__${plato.usuario.id}__)}">
+                            <div class="card-comment"><p th:text="${plato.comentario}"></p></div>
+                        <img class="img-card-vsc" th:if="${plato.foto != null}" th:src="${'/foto/plato/' + plato.id}">
+                        <img class="img-card-vsc" th:if="${plato.foto == null}" src="/img/plato.jpg">
+                            <div class="card-description">
+                                <h1 class="user-food" th:text="${plato.nombre}"></h1>
+                                <h2 class="food-bar">Bar/Restaurant: <span th:text="${plato.bar.bar}"></span></h2>
+                                <p class="user-score">Puntuación: <span th:text="${plato.valoracion}"></span>/10</p>
+                                <p class="user-name">Usuario: <span th:text="${plato.usuario.nombre}"></span></p>
+                            </div>
+                        </a>
+                    </div>
+                    <div class="misplatos-cards-links" th:if="${usuario.id == session.usuariosession.id}">
+                        <a th:href="@{/plato/editar-perfil(id=__${plato.id}__,accion=Actualizar)}">Editar</a>
+                        <a th:href="@{/plato/editar-perfil(id=__${plato.id}__,accion=Eliminar)}">Eliminar</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <footer th:replace="/fragments/footer :: footer"></footer>
+    </body>
+</html>

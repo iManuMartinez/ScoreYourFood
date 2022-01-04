@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+
+        <!-- FONT AWESOME ICONS -->
+        <script src="https://kit.fontawesome.com/3e0d35078d.js" crossorigin="anonymous"></script>
+
+        <link rel="stylesheet" href="/css/estilos.css" />
+        <title>Editar perfil</title>
+    </head>
+
+    <body>
+        <nav th:replace="/fragments/nav :: nav"></nav>
+        <img id="img-background" src="/img/girl-gabc95120b_1920.jpg" alt="">
+
+
+        <div class="body-container">
+            <div class="register-form-container">
+                <img th:if="${perfil.foto == null}" id="img-user" src="/img/User.png" alt="">
+                <img id="img-user" th:if="${perfil.foto != null}" th:src="${'/foto/usuario/' + perfil.id}">
+                <form th:replace="/fragments/editarusuario :: form"></form>
+            </div>
+        </div>
+
+        <footer th:replace="/fragments/footer :: footer"></footer>
+
+    </body>
+
+</html>

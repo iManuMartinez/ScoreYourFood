@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+        <!--        <link rel="stylesheet" href="/css/estilos.css">-->
+        <link rel="stylesheet" href="/css/stylecards.css">
+        <title>Document</title>
+    </head>
+
+    <body class="body-cards">
+        <nav th:replace="/fragments/nav :: nav"></nav>    
+
+        <div class="main-lista">
+
+            <div class="lateral-bar">
+                <a href="#" th:each="tipo : ${T(com.ScoreYourFood.demo.Enum.TipoComida).values()}" th:value="${tipo}" th:text="${tipo}" th:href="@{/plato/ver-platos?tipo=} + ${tipo}"></a>
+            </div>
+
+            <div class="testimonios_contenedor">                
+                <div class="card-vsc" th:each="plato:${platos}">
+                    <a th:href="@{/plato/platos-usuario(id=__${plato.usuario.id}__)}">
+                        <div class="card-comment"><p th:text="${plato.comentario}"></p></div>
+                        <img class="img-card-vsc" th:if="${plato.foto != null}" th:src="${'/foto/plato/' + plato.id}">
+                        <img class="img-card-vsc" th:if="${plato.foto == null}" src="/img/plato.jpg">
+                        <div class="card-description">
+                            <h1 class="user-food" th:text="${plato.nombre}"></h1>
+                            <h2 class="food-bar">Bar/Restaurant: <span th:text="${plato.bar.bar}"></span></h2>
+                            <p class="user-score">Puntuación: <span th:text="${plato.valoracion}"></span>/10</p>
+                            <p class="user-name">Usuario: <span th:text="${plato.usuario.nombre}"></span></p>
+                        </div>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+</html>

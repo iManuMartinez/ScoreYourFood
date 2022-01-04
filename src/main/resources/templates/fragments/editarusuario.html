@@ -1,0 +1,20 @@
+<form action="/usuario/actualizar-perfil" method="post" enctype="multipart/form-data">
+    <p th:if="${error != null}" th:text="${error}"></p>
+    <input type="hidden" name="id" th:value="${perfil.id}"/>
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" placeholder="Ingresá tu nombre" name="nombre" th:value="${perfil.nombre}"><br>
+    <label for="apellido">Apellido:</label><br>
+    <input type="text" name="apellido" placeholder="Ingresá tu apellido" th:value="${perfil.apellido}"><br>
+    <label for="email">Email:</label><br>
+    <input type="email" name="email" placeholder="Ingresá tu email" th:value="${perfil.email}"><br>
+    <label>Foto:</label><br>
+    <input type="file" name="archivo" id="archivo"><br>
+    <label for="clave">Clave:</label><br>
+    <input type="password" name="clave" placeholder="Ingrese su clave" th:value="${clave}"><br>
+    <label for="clave2">Repita la clave:</label><br>
+    <input type="password" name="clave2" placeholder="Repita su clave" th:value="${clave2}"><br>
+    <div class="buttons-register">
+        <input type="submit" value="Actualizar">
+        <input type="submit" formmethod="POST" formaction="/usuario/eliminar-perfil" value="Eliminar">
+    </div>
+</form>

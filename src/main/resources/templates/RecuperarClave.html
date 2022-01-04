@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+
+
+
+    <!-- FONT AWESOME ICONS -->
+    <script src="https://kit.fontawesome.com/3e0d35078d.js" crossorigin="anonymous"></script>
+
+    <link rel="stylesheet" href="css/estilos.css" />
+    <title>LOGIN</title>
+</head>
+
+<body>
+    <nav th:replace="/fragments/nav :: nav"></nav>
+    <img id="img-background" src="img/girl-gabc95120b_1920.jpg" alt="">
+    
+
+    <div class="body-container">
+        <div class="register-form-container">
+            <h1>SyF</h1>
+            <form class="codigo-form-container" action="/recuperar-clave" method="post" enctype="multipart/form-data">
+                <p th:if="${error != null}" th:text="${error}" style="color:red"></p>
+                <label for="email">Email:</label>
+                <input type="email" name="email" required placeholder="Ingresá tu email" th:value="${email}">
+                <label for="codigo">Codigo:</label>
+                <input type="number" name="codigo" required placeholder="Ingrese su codigo de seguridad" th:value="${codigo}">
+                <label for="clave">Clave:</label>
+                <input type="password" name="clave" required placeholder="Ingrese su clave" th:value="${clave}">
+                <label for="clave2">Repita la clave:</label>
+                <input type="password" name="clave2" required placeholder="Repita su clave" th:value="${clave2}">                
+                <div class="buttons-register">
+                    <input type="submit" value="Cambiar clave">
+                    <input type="reset" value="Limpiar">
+                </div>
+            </form>
+        </div>
+    </div>
+    <footer>
+        <div class="footer-links">
+            <a href="#"><i class="fas fa-users"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-twitter"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+        </div>
+        <p>ScoreYourFood</p>
+    </footer>
+
+</body>
+
+</html>

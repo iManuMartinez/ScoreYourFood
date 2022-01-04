@@ -1,0 +1,52 @@
+<nav class="navbar">
+    <div class="navbar-container">
+        <a id="nav-brand" th:if="${session.usuariosession!=null}" href="/inicio">ScoreYourFood</a>
+        <a id="nav-brand" th:if="${session.usuariosession==null}" href="#bienvenida">ScoreYourFood</a>
+        <ul class="nav-menu">
+            <li>
+                <a class="nav-link" th:if="${session.usuariosession!=null}" href="/inicio">Inicio</a>
+                <a class="nav-link" th:if="${session.usuariosession==null}" href="/">Inicio</a>
+            </li>
+            <li th:if="${session.usuariosession!=null}">
+                <a class="nav-link" href="/plato/lista-platos">Experiencias</a>
+            </li>
+            <li id="comidas">
+                <a id="btn-comidas" class="nav-link" href="#">Comidas</a>
+                <ul class="submenu">
+                    <li class="submenu-link">
+                        <a class="" href="/plato/ver-platos?tipo=HAMBURGUESAS">Hamburguesas</a>
+                    </li>
+                    <li class="submenu-link">
+                        <a class="" href="/plato/ver-platos?tipo=PASTAS">Pastas</a>
+                    </li>
+                    <li class="submenu-link">
+                        <a class="" href="/plato/ver-platos?tipo=PIZZAS">Pizzas</a>
+                    </li>
+                    <li class="submenu-link">
+                        <a class="" href="/plato/lista-platos">Otras comidas</a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+        <ul>
+            <li id="btn-user" th:if="${session.usuariosession != null}">                
+                <a href="" class="btn-user-link" th:text="${session.usuariosession.nombre}"></a>
+                <ul class="menu-user">
+                    <li class="menu-user-link">
+                        <a class="" href="/plato/mis-platos">Ver Platos</a>
+                    </li>
+                    <li class="menu-user-link">
+                        <a class="" href="/plato/editar-perfil">Cargar Plato</a>
+                    </li>
+                    <li class="menu-user-link">
+                        <a class="" th:href="@{/usuario/editar-perfil(id=__${session.usuariosession.id}__)}">Editar Perfil</a>
+                    </li>
+                    <li class="menu-user-link">
+                        <a class="" href="/logout">SALIR</a>
+                    </li>
+                </ul>
+            </li>
+            <a th:if="${session.usuariosession == null}" href="/login" class="btn-nav">INGRESAR</a>
+        </ul>
+    </div>
+</nav>

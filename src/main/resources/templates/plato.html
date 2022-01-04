@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <script src="https://kit.fontawesome.com/3e0d35078d.js" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="/css/estilos.css" />
+        <title>Plato</title>
+    </head>
+
+    <body>
+        <nav th:replace="/fragments/nav :: nav"></nav>
+        <div class="container-upload-food">
+            <img id="img-upload-food" src="/img/girl-gabc95120b_1920.jpg" alt="">
+
+
+            <div class="form-upload-food">
+                <div class="uploadfood-form-container">
+                    <img th:if="${perfil.foto == null}" id="img-user" src="/img/plato.jpg" alt="">
+                    <img id="img-user" th:if="${perfil.foto != null}" th:src="${'/foto/plato/' + perfil.id}">
+                    <form th:replace="/fragments/cargaplato :: form"></form>
+                </div>
+            </div>
+        </div>
+
+        <footer th:replace="/fragments/footer :: footer"></footer>
+
+    </body>
+
+</html>

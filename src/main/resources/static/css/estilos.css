@@ -1,0 +1,772 @@
+/* FONTS */
+
+@import url('https://fonts.googleapis.com/css2?family=Berkshire+Swash&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Zen+Antique+Soft&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Raleway&display=swap');
+/* STYLES */
+
+body {
+    margin: 0;
+    padding: 0;
+    position: relative;
+    user-select: none;
+    height: 100vh;
+    width: 100vw;
+}
+
+#img-background {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    filter: sepia(60%) blur(4px) brightness(80%) grayscale(30%);
+}
+#img-user {
+    border: #EBC0AC;
+    object-fit: cover;
+    border-radius: 100%;
+    width: 17%;
+    height: 17%;
+}
+.register-form-container p {
+    font-family: 'Raleway', sans-serif;
+    color:red;
+    font-weight: 700;
+    font-size: 15px;
+}
+.register-form-container select{
+    width: 70%;
+    border: #EBC0AC solid 3px;
+    border-radius: 10px;
+    outline: none;
+    transition: background-color .3s linear;
+    color: #9C726A;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    height: 4%;
+    padding: 1% 1%;
+}
+
+nav {
+    height: 10vh;
+    width: 100%;
+    background-color: #EBC0AC;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    z-index: 100;
+}
+
+.navbar-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.nav-menu {
+    display: flex;
+    height: 100%;
+    width: 50vw;
+    justify-content: space-evenly;
+    align-items: center;
+    position: relative;
+}
+
+li {
+    list-style: none;
+}
+
+.nav-menu li {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100%;
+
+}
+
+.nav-menu a {
+    color: #9C726A;
+    font-size: 1.2rem;
+    font-family: 'Zen Antique Soft', serif;
+    text-decoration: none;
+    transition: transform .3s ease-out;
+    display: block;
+    position: relative;
+    align-items: center;
+}
+
+.nav-menu a:hover {
+    transform: translate(0, 6px);
+}
+
+
+.submenu {
+    position: absolute;
+    top: 90%;
+    background-color: #EBC0AC;
+    flex-direction: column;
+    left: 0;
+    align-items: center;
+    justify-content: space-evenly;
+    border-radius: 13px;
+    display: none;
+}
+
+.submenu-link {
+    width: 100%;
+    padding: .5rem; 
+    display: block;
+}
+
+.submenu-link a{
+    display: block;
+    width: 100%;
+    text-align: left;
+    transition: transform .3s ease-out;
+}
+
+.submenu-link a:hover {
+    transform: translateX(-10px);
+}
+
+#comidas:hover .submenu {
+    display: flex;
+}
+
+.submenu a {
+    font-size: 1rem;
+}
+
+#nav-brand {
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 2rem;
+    color: #9C726A;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.btn-nav {
+    background-color: #C49086;
+    color: #EBC0AC;
+    border-radius: 12px;
+    padding: 1rem 2rem;
+    font-family: 'Comfortaa', cursive;
+    outline: inherit;
+    text-decoration: none;
+    transition: background-color .3s linear;
+}
+
+.btn-nav:hover, #btn-user:hover {
+    background-color: #9C726A;
+}
+
+
+#btn-user {
+    position: relative;
+    background-color: #C49086;
+    border-radius: 12px;
+    padding: 1rem 2rem;
+    font-family: 'Comfortaa', cursive;
+    text-decoration: none;
+    transition: background-color .3s linear;
+
+}
+
+
+.btn-user-link {
+    text-decoration: none;
+    color: #EBC0AC;
+}
+
+
+.menu-user {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    background-color: #EBC0AC;
+    flex-direction: column;
+    width: 100%;
+    border-radius: 13px;
+    display: none;
+    align-items: flex-start;
+}
+.menu-user-link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+
+}
+
+.menu-user-link a {
+    height: 100%;
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    padding: .5rem;
+    color: #9C726A;
+    transition: transform .3s ease-out;
+}
+
+#btn-user:hover .menu-user {
+    display: flex;
+}
+
+.menu-user-link a:hover {
+    transform: translateX(-10px);
+}
+
+
+/** FORM LOGIN **/
+
+.body-container {
+    position: absolute;
+    z-index: 50;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container {
+    background-color: white;
+    height: 60%;
+    width: 20%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-container form {
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.form-container h1 {
+    font-family: 'Berkshire Swash', cursive;
+    color: #9C726A;
+    font-size: 85px;
+}
+
+.form-container input:not(input[type="submit"]) {
+    width: 100%;
+    height: 35px;
+    border: #EBC0AC solid 3px;
+    border-radius: 10px;
+    outline: none;
+    transition: background-color .3s linear;
+    color: #9C726A;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    padding: 1% 2%;
+}
+
+.form-container input:focus {
+    background-color: #EBC0AC;
+}
+
+.form-container label {
+    font-family: 'Raleway', sans-serif;
+    color: #9C726A;
+    font-weight: 700;
+    font-size: 20px;
+    align-self: flex-start;
+}
+
+.form-container input[type="submit"] {
+    width: 50%;
+    font-size: 17px;
+    border: none;
+    background-color: white;
+    color: #9C726A;
+    font-family: 'Raleway', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.form-container a {
+    width: 50%;
+    font-size: 17px;
+    border: none;
+    background-color: white;
+    text-decoration: none;
+    color: #9C726A;
+    font-family: 'Raleway', sans-serif;
+}
+
+.buttons {
+    width: 110%;
+    display: flex;
+    justify-content: space-between;
+    height: 30%;
+    align-items: center;
+}
+
+/*MAIL FORM */
+
+.mail-form-container {
+    background-color: white;
+    width: 30%;
+    height: 50%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
+.mail-form-container form {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.mail-form-container form .buttons-register {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start
+}
+
+.mail-form-container input:not(input[type="submit"],
+input[type="reset"]) {
+    width: 70%;
+    border: #EBC0AC solid 3px;
+    border-radius: 10px;
+    outline: none;
+    transition: background-color .3s linear;
+    color: #9C726A;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    height: 4%;
+    padding: 3% 1%;
+}
+
+.mail-form-container input:not(input[type="submit"],
+input[type="submit"],
+input[type="file"]):focus {
+    background-color: #EBC0AC;
+}
+
+.codigo-form-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.codigo-form-container input {
+    margin: 10px 0;
+}
+
+.codigo-form-container .buttons-register {
+    display: flex;
+    width: 100%;
+    justify-content: flex-start;
+}
+
+/** FORM REGISTER **/
+
+.register-form-container {
+    background-color: white;
+    width: 40%;
+    height: 70%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-form-container h1, .mail-form-container h1 {
+    font-family: 'Berkshire Swash', cursive;
+    color: #9C726A;
+    font-size: 125px;
+    justify-self: flex-start;
+}
+
+.mail-form-container h1 {
+    font-size: 120px;
+}
+
+.register-form-container form {
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.register-form-container input:not(input[type="submit"],
+input[type="reset"]) {
+    width: 70%;
+    border: #EBC0AC solid 3px;
+    border-radius: 10px;
+    outline: none;
+    transition: background-color .3s linear;
+    color: #9C726A;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    height: 4%;
+    padding: 1% 1%;
+}
+
+#archivo {
+    padding-bottom: 4%;
+}
+
+.register-form-container input:not(input[type="submit"],
+input[type="submit"],
+input[type="file"]):focus {
+    background-color: #EBC0AC;
+}
+
+.register-form-container label, .mail-form-container label {
+    font-family: 'Raleway', sans-serif;
+    color: #9C726A;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.buttons-register {
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+    height: 30%;
+    align-items: center;
+    padding-bottom: 30px;
+}
+
+.buttons-register button, .buttons-register input {
+    width: 50%;
+    font-size: 17px;
+    border: none;
+    background-color: white;
+    color: #9C726A;
+    font-family: 'Raleway', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+}
+/** FOOTER **/
+
+footer {
+    height: 7vh;
+    width: 100%;
+    background-color: #EBC0AC;
+    position: relative;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 110;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: space-between;
+    width: 15%;
+    padding: 0 3%;
+}
+
+.footer-links a i {
+    font-size: 30px;
+    color: #9C726A;
+}
+
+footer p {
+    font-family: 'Berkshire Swash', cursive;
+    font-size: 2rem;
+    color: #9C726A;
+    padding: 0 3%;
+    font-weight: 600;
+}
+
+/** CARDS PERFIL **/
+
+.card-vsc {
+    height: 48vh;
+    width: 16vw;
+    border-radius: 30px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 20px 10px; 
+}
+
+.card-vsc a {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    position: relative; 
+    text-decoration: none;
+}
+
+
+.card-vsc a:hover>.img-card-vsc {
+    filter: blur(4px) brightness(30%) grayscale(30%);
+}
+
+.card-vsc a:hover>.card-description {
+    filter: blur(4px) brightness(30%) grayscale(30%);
+}
+
+.card-vsc a:hover>.card-comment{
+    opacity: 1;
+}
+.card-comment {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.5s linear;
+    z-index: 150;
+}
+.card-comment p{
+    text-align: justify;
+    width: 90%;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    line-height: 30px;
+    font-weight: lighter;
+}
+
+.img-card-vsc {
+    height: 50%;
+    width: 100%;
+    object-fit: cover;
+    box-sizing: border-box;
+    transition: filter 0.5s linear;
+}
+
+.card-description {
+    background-color: #EBC0AC;
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    text-align: justify;
+    justify-content: space-evenly;
+    padding-left: 10px;
+    font-family: 'Raleway', sans-serif;
+    color: #9C726A;
+    transition: filter 0.5s linear;
+}
+
+.user-food {
+    font-size: 28px;
+    font-weight: bolder;
+}
+
+.food-bar {
+    font-size: 18px;
+}
+.food-bar span {
+    font-weight: bolder;
+}
+.user-score,
+.user-name {
+    font-size: 16px;
+}
+
+.user-score span,
+.user-name span {
+    font-weight: bolder;
+}
+
+
+.misplatos-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;        
+    background-color: #B38379;
+    padding: 2rem 0;
+}
+
+.misplatos-user {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    width: 60%;
+    height: 60%;
+}
+
+#photo-user{
+    width: 30%;
+    height: 30%;
+    border-radius: 50%; 
+    filter: contrast(80%) sepia(30%) brightness(0.90);
+
+}
+
+.misplatos-user h1 {
+    position: absolute;
+    align-self: flex-end;
+    color: white;
+    font-family: 'Raleway', sans-serif;
+    font-size: 3rem;
+    font-weight: bolder;
+}
+
+.misplatos-cards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.misplatos-cards-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 10px;
+}
+
+.misplatos-cards-links{
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.misplatos-cards-links a{
+    text-decoration: none;
+    font-family: 'Raleway', sans-serif;
+    color: #EBC0AC;
+    font-size: 1.4rem;
+}
+
+
+/*UPLOAD FOOD FORM*/
+
+
+.container-upload-food {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+#img-upload-food {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    filter: sepia(60%) blur(4px) brightness(80%) grayscale(30%);
+}
+
+.form-upload-food{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+.uploadfood-form-container{
+    background-color: white;
+    width: 40%;
+    height: 70%;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items: center;
+}
+
+.uploadfood-form-container form{
+    width: 60%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+
+}
+
+.uploadfood-form-container input:not(input[type="submit"],
+input[type="reset"]){
+    width: 70%;
+    border: #EBC0AC solid 3px;
+    border-radius: 10px;
+    outline: none;
+    transition: background-color .3s linear;
+    color: #9C726A;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    height: 30%;
+    padding: 1% 1%;
+}
+
+
+.uploadfood-form-container input:not(input[type="submit"],
+input[type="submit"],
+input[type="file"]):focus {
+    background-color: #EBC0AC;
+}
+
+.uploadfood-form-container label {
+    font-family: 'Raleway', sans-serif;
+    color: #9C726A;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+.container-imput {
+    padding: 1% 0;
+    display: flex;
+    flex-direction: column;
+    height: 40%;       
+}
+
+
+/*CARGA BAR*/
+
+.cargabar-container{
+    height: 100%;
+    width: 100%;
+    position: relative;
+}
+
+#img-cargabar {
+    width: 100%;
+    height: 100%;
+}
+
+.cargabar-register{
+    border: 3px solid #9C726A;
+}
+
+.cargabar-register form {
+    justify-content: space-evenly;
+    align-items: flex-start
+}
+
+.cargabar-register form input[type="submit"] {
+    width: 50%;
+    font-size: 17px;
+    border: none;
+    background-color: white;
+    color: #9C726A;
+    font-family: 'Raleway', sans-serif;
+    cursor: pointer;
+    text-decoration: none;
+}

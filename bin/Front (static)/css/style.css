@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap');
+:root{
+    --main-color: #FF5F49;
+    --secondary-color: #4971FF;
+    --font: 'Roboto Condensed', sans-serif;
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    background-color: var(--main-color);
+}
+
+.nav{
+    width: 100vw;
+    height: 80px;
+    background-color: #fff;
+    padding: 7px 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.brand{
+    height: 60px;
+    font-family: var(--font);
+    font-size: 24px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    letter-spacing: 0.1em;
+    color: var(--main-color);
+}
+
+.buttons{
+    display: flex;
+}
+
+.login,.register{
+    width: 120px;
+    height: 50px;
+    margin: 0 20px;
+    border-radius: 7px;
+    font-family: var(--font);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: bold;
+    color:#fff;
+    cursor:pointer;
+    text-decoration: none;
+    letter-spacing: 2px;
+}
+
+.login{
+    background-color: var(--main-color);
+}
+
+.register{
+    background-color: var(--secondary-color);
+}
+
+.main-header{
+    height: 100%;
+    background-image: url('/img/header.jpg');
+    width: 100%;
+    mix-blend-mode: darken;
+    opacity: 0.2;
+    overflow: hidden;
+}

@@ -1,0 +1,38 @@
+
+<form enctype="multipart/form-data">
+    <p th:if="${error!=null}" th:text="${error}" style="color:red"></p>
+    <input type="hidden" name="id" th:value="${perfil.id}"/>
+    <div class="container-imput">    
+        <label for="nombre">Nombre:</label>
+        <input type="text" placeholder="Ingrese el nombre del plato" name="nombre" th:value="${perfil.nombre}" th:disabled="${accion == 'Eliminar'}">
+    </div>
+    <div class="container-imput">    
+        <label for="apellido">Comentario:</label>
+        <input type="text" name="comentario" placeholder="Ingresá un comentario" th:value="${perfil.comentario}" th:disabled="${accion == 'Eliminar'}">
+    </div>
+    <div class="container-imput">    
+        <label for="email">Valoracion:</label>
+        <input type="number" name="valoracion" placeholder="Seleccione valoracion" th:value="${perfil.valoracion}" th:disabled="${accion == 'Eliminar'}"></div>
+    <div class="container-imput">    
+        <label>Foto:</label>
+        <input type="file" name="archivo" id="archivo" th:if="${accion != 'Eliminar'}"></div>
+    <div class="container-imput">    
+        <label>Tipo de Comida:</label>
+        <select name="tipo" th:disabled="${accion == 'Eliminar'}">
+            <option th:each="tipo : ${tipos}" th:value="${tipo}" th:text="${tipo}" th:selected="${perfil.tipo != null && tipo==perfil.tipo}"></option>
+        </select> 
+    </div>
+    <div class="container-imput">    
+        <label>Bares:</label>
+        <select name="bar" th:disabled="${accion == 'Eliminar'}">
+            <option  th:each="bar : ${bares}" th:value="${bar.id}" th:text="${bar.bar}" th:selected="${perfil.bar != null && bar.id==perfil.bar.id}"></option>
+        </select>  
+    </div>
+
+    <div class="buttons-register">
+        <button type="submit" th:if="${accion == 'Crear'}" formaction="/plato/actualizar-perfil" formmethod="POST">Agregar Reseña</button>
+        <button type="submit" th:if="${accion == 'Actualizar'}" formaction="/plato/actualizar-perfil" formmethod="POST">Editar Reseña</button>
+        <button type="submit" th:if="${accion == 'Eliminar'}" formaction="/plato/eliminar-perfil" formmethod="POST">Eliminar Reseña</button>
+        <button th:if="${accion == 'Crear'}" formaction="/bar/editar-perfil" formmethod="GET">Agregar Bar</button>
+    </div>
+</form>

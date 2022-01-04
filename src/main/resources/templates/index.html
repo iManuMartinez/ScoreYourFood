@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS Styles-->
+    <link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- SCROLL REVEAL SCRIPT-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- FONT AWESOME ICONS -->
+    <script src="https://kit.fontawesome.com/3e0d35078d.js" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <nav th:replace="/fragments/nav :: nav"></nav>
+    <main>
+
+        <div class="container-img">
+            <img src="/img/girl-gabc95120b_1920.jpg" id="img-index" alt="">
+            <div class="logo">
+                <span>SyF</span>
+            </div>
+        </div>
+
+        <section>
+
+            <div class="section-one" id="bienvenida">
+                <div class="text-section-one">
+                    <h1 class="scroll-title">Bienvenido.</h1>
+                    <p id="text-one">Estás en el primer portal dedicado exclusivamente a la experiencia del cliente en bares y restaurants. <br> No dejes más tu salida librada a la suerte! <br> Creá tu usuario y encuentra lo que estás buscando!!
+                    </p>
+                    <ul id="btn-container">
+                        <a id="btn-register" href="/registro">Registro</a>
+                    </ul>
+                </div>
+                <img id="img-section-one" src="img/food-gb459cae56_1280.jpg" alt="">
+            </div>
+
+
+            <div class="section-two">
+                <div class="container-section-two">
+                    <h1 class="brand-section-two">SyF<span>©</span></h1>
+                    <p class="text-section-two">Fuiste a comer y tu plato fue exquisito? Sube una foto del mismo y deja una reseña! <br> Querés cenar algo en especial y no sabes donde ir? Ingresá y encontrá tu mejor opción. <br> No encuentras el lugar que fuiste? No hay problema!
+                        Subilo a la plataforma para que los demás lo puedan elegir también!
+                    </p>
+                </div>
+                <ul class="scroll-links">
+                    <a class="links-section-two" id="btn1-two" href="/login">Ingresar</a>
+                    <a class="links-section-two" id="btn2-two" href="/registro">Registrarse</a>
+                </ul>
+
+            </div>
+        </section>
+        <footer th:replace="/fragments/footer :: footer"></footer>
+
+    </main>
+
+
+
+    <script>
+        ScrollReveal().reveal('.scroll-title', {
+            delay: 155,
+        });
+        ScrollReveal().reveal('#text-one', {
+            delay: 165,
+        });
+        ScrollReveal().reveal('#img-section-one', {
+            delay: 165,
+        });
+        ScrollReveal().reveal('#btn-container', {
+            delay: 175,
+        });
+        ScrollReveal().reveal('.brand-section-two', {
+            delay: 155,
+        });
+        ScrollReveal().reveal('.text-section-two', {
+            delay: 165,
+        });
+        ScrollReveal().reveal('.scroll-links', {
+            delay: 175,
+        });
+    </script>
+
+</body>
+
+</html>

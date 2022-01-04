@@ -1,0 +1,19 @@
+<form action="/registrar" method="post" enctype="multipart/form-data">
+    <p th:if="${error != null}" th:text="${error}"></p>
+    <label for="nombre">Nombre:</label><br>
+    <input type="text" placeholder="Ingresá tu nombre" name="nombre" th:value="${nombre}"><br>
+    <label for="apellido">Apellido:</label><br>
+    <input type="text" name="apellido" placeholder="Ingresá tu apellido" th:value="${apellido}"><br>
+    <label for="email">Email:</label><br>
+    <input type="email" name="email" placeholder="Ingresá tu email" th:value="${email}"><br>
+    <label>Foto:</label><br>
+    <input type="file" name="archivo" id="archivo"><br>
+    <label for="clave">Clave:</label><br>
+    <input type="password" name="clave" placeholder="Ingrese su clave" th:value="${clave}"><br>
+    <label for="clave2">Repita la clave:</label><br>
+    <input type="password" name="clave2" placeholder="Repita su clave" th:value="${clave2}"><br>
+    <div class="buttons-register">
+        <input type="submit" value="Registrar">
+        <input type="reset" value="Limpiar">
+    </div>
+</form>

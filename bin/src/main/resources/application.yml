@@ -1,0 +1,28 @@
+
+spring:
+  mail: 
+    host: smtp.gmail.com
+    port: 587
+    properties:
+        mail:
+            smtp:              
+                auth: true
+                starttls:
+                    required: true
+                    enable: true
+    username: 
+    password: 
+
+  datasource: 
+    url: jdbc:mysql://localhost:3306/food?useUnicode=true&useJDBCCompliantTimezoneShift=true&useLegacyDatetimeCode=false&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver 
+  jpa: 
+    show-sql: false
+    hibernate:
+      ddl-auto: update 
+  thymeleaf:
+    cache: false 
+server:
+  port: 8080

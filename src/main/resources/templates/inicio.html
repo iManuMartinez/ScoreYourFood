@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS Styles-->
+    <link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- SCROLL REVEAL SCRIPT-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- FONT AWESOME ICONS -->
+    <script src="https://kit.fontawesome.com/3e0d35078d.js" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <nav th:replace="/fragments/nav :: nav"></nav>
+    <main>
+
+        <div class="container-img">
+            <img src="img/girl-gabc95120b_1920.jpg" id="img-index" alt="">
+            <div class="logo">
+                <a href="/plato/lista-platos" class="btn-nav">COMIENZA TU BUSQUEDA</a>
+            </div>
+        </div>
+        <footer th:replace="/fragments/footer :: footer"></footer>
+
+    </main>
+
+
+
+    <script>
+        ScrollReveal().reveal('.scroll-title', {
+            delay: 155,
+        });
+        ScrollReveal().reveal('#text-one', {
+            delay: 165,
+        });
+        ScrollReveal().reveal('#img-section-one', {
+            delay: 165,
+        });
+        ScrollReveal().reveal('#btn-container', {
+            delay: 175,
+        });
+        ScrollReveal().reveal('.brand-section-two', {
+            delay: 155,
+        });
+        ScrollReveal().reveal('.text-section-two', {
+            delay: 165,
+        });
+        ScrollReveal().reveal('.scroll-links', {
+            delay: 175,
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- CSS Styles-->
+    <link rel="stylesheet" href="/css/style.css">
+
+
+    <!-- SCROLL REVEAL SCRIPT-->
+    <script src="https://unpkg.com/scrollreveal"></script>
+
+    <!-- FONT AWESOME ICONS -->
+    <script src="https://kit.fontawesome.com/3e0d35078d.js" crossorigin="anonymous"></script>
+
+    <title>Document</title>
+</head>
+
+<body>
+    <nav th:replace="/fragments/nav :: nav"></nav>
+
+    <main>
+        <section>
+
+            <div class="section-one">
+                <div class="text-section-one">
+                    <h1 class="scroll-title" th:text="${titulo}"></h1>
+                    <p id="text-one" th:text="${descripcion}"></p>
+                </div>
+                <img id="img-section-one" src="/img/food-gb459cae56_1280.jpg" alt="">
+            </div>
+
+        </section>
+        
+        <footer th:replace="/fragments/footer :: footer"></footer>
+
+    </main>
+
+
+
+    <script>
+        ScrollReveal().reveal('.scroll-title', {
+            delay: 155,
+        });
+        ScrollReveal().reveal('#text-one', {
+            delay: 165,
+        });
+        ScrollReveal().reveal('#img-section-one', {
+            delay: 165,
+        });
+        ScrollReveal().reveal('#btn-container', {
+            delay: 175,
+        });
+        ScrollReveal().reveal('.brand-section-two', {
+            delay: 155,
+        });
+        ScrollReveal().reveal('.text-section-two', {
+            delay: 165,
+        });
+        ScrollReveal().reveal('.scroll-links', {
+            delay: 175,
+        });
+    </script>
+
+</body>
+
+</html>
